@@ -1,0 +1,17 @@
+1: get system information
+uname -a
+2: CPU physical
+lscpu or cpuinfo
+3: Memory
+free -tm
+4: disk space
+df -mh
+5: last boot
+last
+connections
+sudo netstat -tupn
+
+eval getent passwd {$(awk '/^UID_MIN/ {print $2}' /etc/login.defs)..$(awk '/^UID_MAX/ {print $2}' /etc/login.defs)} | cut -d: -f1
+
+who
+users
