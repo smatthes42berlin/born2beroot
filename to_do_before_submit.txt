@@ -1,0 +1,2 @@
+change password of user and root
+change encryption passphrase

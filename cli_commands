@@ -1,0 +1,39 @@
+dpkg -l = show installed packages
+su - smatthes42 = substitude user
+
+sudo deluser username groupname = remove user from group
+adduser <username> group
+getent group sudo = show all users belonging to sudo group
+reboot
+sudo -v = validate superuser and check credentials
+sudo apt update = update all packages
+/etc/sudoers.d = files, where sudo can be configured
+visudo -f <filename>= recommended use for configuring suod
+sudo vi /etc/ssh/sshd_config = configure ssh (ssh is for client, ssh is for server)
+sudo service ssh status = check ssh status
+sudo ufw enable = enble ufw (uncomplicate firewall)
+sudo ufw allow 4242 = allow certain port
+sudo ufw status = check ufw status
+ssh <login>@<hostname -I> -p 4242 = connect via ssh from hostcomputer
+sudo service ssh restart = restart ssh service
+to delete ufw rule
+sudo ufw status numbered
+sudo ufw delete (that number, for example 5 or 6)
+/etc/login.defs = setting up passwd policy
+/etc/pam.d/common-password = change passwd security settings (libpma-pwquality package)
+sudo passwd <user>
+sudo chage -l <username> = check password expiration etc of user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
