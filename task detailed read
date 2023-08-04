@@ -1,0 +1,142 @@
+shasum
+
+only tun in siganture.txt @ root
+hostname must be smatthes42
+modify hostname during evaluation
+passwd policy also for root
+sudo with strict rules
+user smatthes has to be present
+has to belong to sudo and user42 group
+create user and assign it to group
+change all passwords on virtual machine after setting up strong password policy
+authentication to sudo limited to 3 attempts
+custom message
+log everything
+enable TTY
+secure path for sudo
+monitoring script
+monitoring script every 10 minutes after server startup
+interupt script wihtout modifying it
+
+
+virtual machine
+- software emulation of computer system
+- one host pc can run multiple guest vm on its hardware
+- each is independent 
+- sandbox environment and isolation
+- run different os
+- test insecure operations
+- effectivly use computer hardware ressources, save costs on power, cooling and physical space
+- managed by hypervisor
+- development and testing
+- support legay applications
+- security research and analysys -> analyze malicious software, test different configurations
+- easy to backup, clone, restore, recover
+
+why debian?
+- rocky is designed as enterprise operating system -> here no enterprise environment
+- ubuntu closer to debian
+- debian is very old and establsihed -> many free available packages
+
+LVM, Partitions, Encryption, Mountpoint
+- LVM abstraction layer above hard drives
+- combine multiple physical into one logical
+- easy snapshots as backups
+- sliced writing -> write to multiple hd at once -> faster
+- storage is easy to extend without unmounting everything
+
+Difference between apt (advanced packaging tool) and Aptitude
+Apt:
+- high level cli for package management system
+- intented as end user interface, not as specialised as apt-get and apt-cache
+- standard packaging tool on debian distros
+Aptitude:
+- text-based interface to the Debian Package System
+- view and manage packages
+- either command line or visual user interface
+- more features than apt
+
+- when package conflict, apt wont fix issue, aptitude will suggest resolution
+- aptitude allows to search for packages
+- can resolve complex dependency issues
+
+Apparmor
+- linux security module
+- additional layer of access control and confinement for processes and applications running on a system
+- not each application can write, read, delete everywhere
+- improve system security and damage that can be done by malcious software
+- profile based
+- restrict network access
+- restrict inter-process communication
+- easy to use
+
+SSH
+- Secure Shell
+- cryptographic network protocol
+- securely access and manage remot systems over unsecured network
+- secure and encrypted communication between client and server protecting data like credentials
+- client-server-model
+- encryption
+- authentication (password, public key, certificate based)
+- setting up only specific ports for access
+- transferring files
+
+UFW
+- uncomplicated firewall
+- user-friendly front end for managing iptables
+- simplyfied syntax
+- cli interface
+- default deny - block anything unless explicitely allowed
+- application specfic profiles possible -> open ports only for certain appplications
+- compatible with iptables
+- log firewall activity
+- includes pre configured profiles
+- preinstalled on debian
+
+why sudo
+- superuser do
+- run commands with root priviledges without logging in as root
+- asks for password more frequently -> be more aware of destructive power one has compared to root
+- notification if doing potential dangerous stuff
+- retricting superuser priviledges only to certain users is more secure
+- prevent accidental system damage and reduce security vulnerabilities
+- granular access control - only allow certain administrative commands
+- log all commands executed as sudo -> audit trail
+- sudo is password protected
+- user can be held accountable for sudo commands executed
+- dont accidentally run harmful root commands
+
+passwd policy pros + cons
+- password are hard to crack
+- user are forced abide to rules
+- risk of users only using one password for everything or writing down passwords
+
+tty
+- teletype
+- refers to physical or virtual terminals used to interact with systems
+- physical tty
+	- in the past physical terminals to interact with mainframe computers
+- virtual tty
+	- multiple virtual terminals on linux machines
+-tty -> print filename of current terminal
+- standard interface for input and output
+
+cron
+- time based scheduler
+- run cronjobs in specific time intervals
+- display system information, do backups, synchronise data
+- crontab to store schedule and commands for cron jobs
+- can be user or system wide
+- system wide cron directories etc/cron.daily cron.weekly cron.monthly
+- system maintenance -> clean temp dirs
+- scheduled reports
+- backups
+- system updates
+
+libpam-pwquality
+- enforce password quality requirements and policies
+- part of pluggable authentication module (PAM)
+- PAM userd in linux for user authentication
+
+
+
