@@ -1,2 +1,3 @@
 change password of user and root
 change encryption passphrase
+run monitoring script on startup
